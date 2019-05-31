@@ -57,7 +57,7 @@ function updateBeerDetail(event, beer){
     event.preventDefault()
     console.log("IM INSIDE THIS FUNCTION")
     const input = document.querySelector("#text-area")
-    
+
     event.target.parentNode.querySelector("#text-area").innerHTML
     // debugger    
     
