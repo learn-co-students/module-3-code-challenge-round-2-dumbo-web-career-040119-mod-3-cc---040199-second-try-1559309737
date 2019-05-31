@@ -6,6 +6,10 @@ function getBeers(){
     .then(data => data.forEach(displayBeers))
 }
 
+// function dislpayOneBeer(beer){
+//     fetch(`http://localhost:3000/beers/${beer.id}`)
+// }
+
 function displayBeers(beer){
     // console.log(beer)
     const beerList = document.querySelector(".list-group")
@@ -41,6 +45,7 @@ function displayBeerInfo(event, beer){
     Save
     </button>
     `
+
     infoCard.append(infoDiv)
     const button = document.querySelector("#edit-beer")
     button.addEventListener("click", function(event){
@@ -52,10 +57,8 @@ function updateBeerDetail(event, beer){
     event.preventDefault()
     console.log("IM INSIDE THIS FUNCTION")
     const input = document.querySelector("#text-area")
-    // const newVal = input.value
-    // input.innerHTML = newVal
-     const newVal = input.innerHTML
-    //event.target.parentNode.querySelector("#text-area").innerHTML = newVal
+    
+    event.target.parentNode.querySelector("#text-area").innerHTML
     // debugger    
     
     fetch(`http://localhost:3000/beers/${beer.id}`,{
@@ -68,11 +71,9 @@ function updateBeerDetail(event, beer){
     })
     // .then(resp => resp.json())
     // .then(data => {
-       
     // })
 }
 
 document.addEventListener("DOMContentLoaded", function(event){
     getBeers()
-  
 })
