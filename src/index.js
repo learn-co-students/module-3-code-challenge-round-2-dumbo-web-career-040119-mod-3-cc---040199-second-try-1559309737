@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
 const divTag = document.querySelector("#beer-detail")
 const ulTag = document.getElementById('list-group')
+const editBeer = document.getElementById("edit-beer")
 
   function slapItOnTheDom(beer) {
     // debugger
@@ -68,6 +69,53 @@ const ulTag = document.getElementById('list-group')
     }
   }
 
+
+
+   // create a new funtion for save butten instead of adding it to the click
+   // create submit addEventListener
+//
+//   editBeer.addEventListener("submit", beerEdit)
+//   function beerEdit(event) {
+//     console.log(event)
+//     if(event.target.classList.contains('btn')) {
+//       const beerId = event.target.dataset.id
+//       const btnTag = document.getElementById('edit-beer')
+//       const newEdit = btnTag.innerText.value
+//       fetch(`http://localhost:3000/beers/${beerId}`, {
+//         method: "PATCH",
+//         headers: {
+//   'Content-Type': 'application/json',
+//   'Accept': 'application/json'
+// },
+// body: JSON.stringify({
+//   description:
+// })
+//
+//       }
+//     }
+
+  // }
+
+  //   console.log(event)
+  //   if(event.target.classList.contains('btn')) {
+  //     const beerId = event.target.dataset.id
+  //     const btnTag = document.getElementById('edit-beer')
+  //     const newEdit = btnTag.innerText.value
+  //
+  //     fetch(`http://localhost:3000/beers/${beerId}`, {
+  //       method: "PATCH",
+  //       headers: {
+  //           'Content-Type': 'application/json',
+  //           'Accept': 'application/json'
+  //       },
+  //       body: JSON.stringify({
+  //         description: editBeer
+  //       })
+  //     }).then(response => response.json())
+  //     .then(data => {
+  //       console.log(data)
+  //       // editBeer.innerHTML = newEdit
+  //     })
 
 
     getAllBeers()
