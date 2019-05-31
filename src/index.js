@@ -22,7 +22,14 @@ function displayBeer(beer){
 
 //display beer info after click happens (replace everytime)
 function beerInfo(event, beer){
-  console.log(event);
+  // console.log(event);
+  // debugger
+  beerId = event.target.dataset.id
+  //fetch to beer url
+  fetch(`http://localhost:3000/beers/${beerId}`)
+  .then(res => res.json())
+  .then(beer => {console.log(beer)})
+
   getDiv.innerHTML = `<h1>${beer.name}</h1>
 <img src="${beer.image_url}">
 <h3>${beer.tagline}</h3>
@@ -43,7 +50,7 @@ function beerInfo(event, beer){
     if (event.target.classList.contains('button')){
       //new value
       const textArea = document.querySelector('#text').value
-      console.log(textArea);
+      // console.log(textArea);
 
 
       fetch(`http://localhost:3000/beers/${beerId}`,{
@@ -62,9 +69,11 @@ function beerInfo(event, beer){
     }
   }
 
+//replace text with new value
 function updateDom(data){
+  // debugger
   let textInput = document.querySelector('#text').value
-  console.log(textInput);
+  // console.log(textInput);
 }
 
 
