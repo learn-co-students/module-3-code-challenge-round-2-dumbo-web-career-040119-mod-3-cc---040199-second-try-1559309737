@@ -18,6 +18,11 @@ document.addEventListener('DOMContentLoaded', (event) => {
   }
 
   function beerShow(beer,event){
+    const beerId = beer.dataset.id
+    fetch(`http://localhost:3000/beers/${beerId}`)
+    .then(response => response.json())
+    .then(beer =>
+// what we want to do is make our get fetch and then add those details to that div! We can pass through the fetch. 
     const beerDiv = document.querySelector('#beer-detail')
     beerDiv.innerHTML = `<h1>${beer.name}</h1>
     <img src="${beer.image_url}">
